@@ -14,6 +14,7 @@ WriteMakefile(
                             'FindBin'           => '1.42',
                             'Image::LibRSVG'    => '0.07',
                             'MIME::Types'       => '1.30',
+                            'XML::Tidy'         => '1.12',
                             'Moose'             => '1.09',
                             'SVG::TT::Graph'    => '0.21',
                             'Test::More'        => '0.94',

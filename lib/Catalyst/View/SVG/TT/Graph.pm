@@ -7,7 +7,7 @@ use Carp;
 use Image::LibRSVG;
 use MIME::Types;
 
-our $VERSION = 0.0226;
+our $VERSION = 0.0227;
 
 has 'format' => ( is => 'ro', isa => 'Str', default => 'svg' );
 
@@ -121,9 +121,11 @@ sub process {
         my $rsvg = Image::LibRSVG->new();
         $rsvg->loadImageFromString($img);
         my $mtype = $self->t->mimeTypeOf($format);
-        $c->res->content_type($mtype);
+        $c->res->content_type($mtype->{MT_type});
         $c->res->body($rsvg->getImageBitmap($format));
     } elsif ($format eq 'svg') {
+        $svgttg->tidy(1);
+        $svgttg->compress(1);
         $c->res->content_type("image/svg+xml");
         $c->res->content_encoding("gzip");
         $c->res->body($svgttg->burn);
