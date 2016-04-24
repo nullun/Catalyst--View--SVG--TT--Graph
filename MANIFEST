@@ -13,3 +13,5 @@ t/lib/script/testapp_server.pl
 t/lib/script/testapp_test.pl
 t/lib/TestApp.pm
 lib/Catalyst/Helper/View/SVG/TT/Graph.pm
+META.yml                                 Module YAML meta-data (added by MakeMaker)
+META.json                                Module JSON meta-data (added by MakeMaker)

@@ -45,10 +45,11 @@ sub default :Path {
     $c->response->status(404);
 }
 
-sub chart : Regex(^chart/(bar(_horizontal)?|pie|line)$) {
-    my ( $self, $c ) = @_;
+sub chart : Chained('/') PathPart('chart') Args() {
+    my ( $self, $c, $arg ) = @_;
 
-    my $type = join("", map { ucfirst } split("_", $c->req->captures->[0]));
+    die "Invalid chart type" if $arg !~ m/^(?:bar(?:_horizontal)?|pie|line)$/;
+    my $type = join("", map { ucfirst } split("_", $arg));
     my $height = $c->req->params->{height} || 200;
     my $width = $c->req->params->{width} || 300;
 

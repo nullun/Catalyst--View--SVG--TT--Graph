@@ -1,3 +1,6 @@
+0.0226 Mon, Aug 17, 2015
+ * Replaced deprecated Regex action in test suite controller
+
 0.0225 Thu, Jun 02, 2011
 
  * ICO live test was failing due to large image - reduced

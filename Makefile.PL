@@ -15,7 +15,7 @@ WriteMakefile(
                             'Image::LibRSVG'    => '0.07',
                             'MIME::Types'       => '1.30',
                             'Moose'             => '1.09',
-                            'SVG::TT::Graph'    => '0.14',
+                            'SVG::TT::Graph'    => '0.21',
                             'Test::More'        => '0.94',
                             'Test::WWW::Mechanize::Catalyst' => '0.52',
                             'namespace::autoclean'  => '0.09'
